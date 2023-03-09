@@ -32,9 +32,10 @@ COPY get-pip.py .
 COPY cookiecutter-2.1.1-py2.py3-none-any.whl .
 RUN python3 get-pip.py --user
 RUN export PATH=$HOME/.local/bin:$PATH
-RUN pip3 install --user cookiecutter jinja2-git
 RUN pip3 install --user cookiecutter-2.1.1-py2.py3-none-any.whl 
-RUN export PATH=$HOME/root/.local/bin:$PATH
+RUN pip3 install --user jinja2-git
+
+RUN export PATH="$PATH:/root/.local/bin"
 # Copy the necessary files into the container
 COPY . .
 
