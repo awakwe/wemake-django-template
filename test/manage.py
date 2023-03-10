@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import os
 import sys
 
@@ -13,10 +12,12 @@ def main() -> None:
     2. Warns if Django is not installed
     3. Executes any given command
     """
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
+    if 'DJANGO_SETTINGS_MODULE' not in os.environ:
+        raise ValueError(
+            "DJANGO_SETTINGS_MODULE environment variable is not set")
 
     try:
-        from django.core import management  # noqa: WPS433
+        from django.core import management
     except ImportError:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and " +
@@ -25,7 +26,3 @@ def main() -> None:
         )
 
     management.execute_from_command_line(sys.argv)
-
-
-if __name__ == '__main__':
-    main()

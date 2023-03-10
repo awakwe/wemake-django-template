@@ -7,7 +7,7 @@
 # Should be used together with `docker/docker-compose.prod.yml`
 # in production.
 
-version: "3.8"
+version: "3.9"
 services:
   db:
     image: "postgres:14-alpine"
