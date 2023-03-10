@@ -4,7 +4,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = True
 
-SECRET_KEY = 'your-secret-key'
+SECRET_KEY = config('DJANGO_SECRET_KEY')
 
 ALLOWED_HOSTS = []
 

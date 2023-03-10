@@ -10,8 +10,8 @@
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
     "cookiecutter gh:wemake-services/wemake-django-template": {
-      "name": "cookiecutter",
-      "command": "pip install cookiecutter",
+      "name": "test",
+      "command": "cd test",
       "runAtStart": true
     }
   }
