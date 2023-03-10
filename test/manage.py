@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test.settings')
 
 
 def main() -> None:
@@ -26,3 +27,7 @@ def main() -> None:
         )
 
     management.execute_from_command_line(sys.argv)
+
+
+if __name__ == '__main__':
+    main()
